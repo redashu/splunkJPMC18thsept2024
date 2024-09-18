@@ -189,7 +189,32 @@ Checking prerequisites...
 
    ```
 /opt/splunk/bin/splunk  stop
-rpm -e splunk
+rpm -e splunk  # very huge lines of output -- if not finishing then use contr + c 
 
 rm -rf /opt/splunk/
    ```
+
+### Splunk summary 
+
+<img src="smp.png">
+
+### splunk license 
+
+<img src="lic.png">
+
+
+## Splunk as container 
+
+### Installing container platform docker 
+
+```
+yum install docker  -y 
+systemctl start docker
+
+===>
+systemctl status docker
+● docker.service - Docker Application Container Engine
+     Loaded: loaded (/usr/lib/systemd/system/docker.service; disabled; preset: disabled)
+     Active: active (running) since Wed 2024-09-18 09:04:33 UTC; 5s ago
+```
+
