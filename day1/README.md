@@ -47,6 +47,8 @@ root
 ```
 
 wget -O splunk-9.3.1-0b8d769cb912.x86_64.rpm "https://download.splunk.com/products/splunk/releases/9.3.1/linux/splunk-9.3.1-0b8d769cb912.x86_64.rpm"
+
+
 --2024-09-18 06:50:59--  https://download.splunk.com/products/splunk/releases/9.3.1/linux/splunk-9.3.1-0b8d769cb912.x86_64.rpm
 Resolving download.splunk.com (download.splunk.com)... 3.167.37.110, 3.167.37.124, 3.167.37.33, ...
 Connecting to download.splunk.com (download.splunk.com)|3.167.37.110|:443... connected.
@@ -58,6 +60,8 @@ splunk-9.3.1-0b8d769cb912.x86_64.rpm       100%[================================
 
 2024-09-18 06:51:09 (98.1 MB/s) - ‘splunk-9.3.1-0b8d769cb912.x86_64.rpm’ saved [990009597/990009597]
 
+
+
 [root@ip-172-31-26-232 ~]# ls
 splunk-9.3.1-0b8d769cb912.x86_64.rpm
 ```
@@ -68,6 +72,8 @@ splunk-9.3.1-0b8d769cb912.x86_64.rpm
 ```
 ls
 splunk-9.3.1-0b8d769cb912.x86_64.rpm
+
+
 [root@ip-172-31-26-232 ~]# rpm -ivh splunk-9.3.1-0b8d769cb912.x86_64.rpm 
 warning: splunk-9.3.1-0b8d769cb912.x86_64.rpm: Header V4 RSA/SHA256 Signature, key ID b3cd4420: NOKEY
 Verifying...                          ################################# [100%]
