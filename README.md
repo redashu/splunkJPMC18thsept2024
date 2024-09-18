@@ -1,1 +1,5 @@
-# splunkJPMC18thsept2024
+## Splunk 
+
+### training plan 
+
+<img src="plan.png">
