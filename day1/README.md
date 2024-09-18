@@ -276,3 +276,16 @@ rpm -ivh splunk-9.3.1-0b8d769cb912.x86_64.rpm
 <img src="spu.png">
 
 
+## setup splunk universal forwarder in linux vm 
+
+```
+wget -O splunkforwarder-9.3.1-0b8d769cb912.x86_64.rpm "https://download.splunk.com/products/universalforwarder/releases/9.3.1/linux/splunkforwarder-9.3.1-0b8d769cb912.x86_64.rpm"
+
+===> verify 
+cd /opt/splunkforwarder/
+[root@ip-172-31-28-99 splunkforwarder]# ls
+LICENSE.txt        bin            etc  include  license-eula.txt  share                                                         swidtag
+README-splunk.txt  copyright.txt  ftr  lib      openssl           splunkforwarder-9.3.1-0b8d769cb912-linux-2.6-x86_64-manifest  uf
+[root@ip-172-31-28-99 splunkforwarder]# 
+
+```
