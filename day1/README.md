@@ -332,3 +332,96 @@ Creating unit file...
    18  /opt/splunkforwarder/bin/splunk start
 ```
 
+
+## On splunk Enterprise server configure receiver port 
+
+<img src="f1.png">
+
+### restarting splunk enterprise service 
+
+```
+/opt/splunk/bin/splunk restart 
+Stopping splunkd...
+Shutting down.  Please wait, as this may take a few minutes.
+..                                                         [  OK  ]
+Stopping splunk helpers...
+                                                           [  OK  ]
+Done.
+
+Splunk> All batbelt. No tights.
+
+Checking prerequisites...
+        Checking http port [8000]: open
+```
+
+## adding splunk server details to forwarder
+
+```
+ /opt/splunkforwarder/bin/splunk   list forward-server
+Warning: Attempting to revert the SPLUNK_HOME ownership
+Warning: Executing "chown -R splunkfwd:splunkfwd /opt/splunkforwarder"
+Splunk username: adminf
+Password: 
+Active forwards:
+        None
+Configured but inactive forwards:
+        None
+
+
+[root@ip-172-31-28-99 ~]# /opt/splunkforwarder/bin/splunk  add  forward-server  54.197.166.158:9997 
+Warning: Attempting to revert the SPLUNK_HOME ownership
+Warning: Executing "chown -R splunkfwd:splunkfwd /opt/splunkforwarder"
+Added forwarding to: 54.197.166.158:9997.
+
+
+[root@ip-172-31-28-99 ~]# /opt/splunkforwarder/bin/splunk   list forward-server
+Warning: Attempting to revert the SPLUNK_HOME ownership
+Warning: Executing "chown -R splunkfwd:splunkfwd /opt/splunkforwarder"
+Active forwards:
+        None
+Configured but inactive forwards:
+        54.197.166.158:9997
+[root@ip-172-31-28-99 ~]# 
+```
+
+### lets deploy sample webapp in splunk forwarder 
+
+```
+yum install git -y
+===>
+git clone https://github.com/schoolofdevops/html-sample-app.git
+Cloning into 'html-sample-app'...
+remote: Enumerating objects: 74, done.
+remote: Counting objects: 100% (3/3), done.
+remote: Compressing objects: 100% (3/3), done.
+remote: Total 74 (delta 0), reused 0 (delta 0), pack-reused 71 (from 1)
+Receiving objects: 100% (74/74), 1.38 MiB | 35.34 MiB/s, done.
+Resolving deltas: 100% (5/5), done.
+
+
+[root@ip-172-31-28-99 ~]# ls
+html-sample-app  splunkforwarder-9.3.1-0b8d769cb912.x86_64.rpm
+```
+
+### lets use apache apps server to deploy 
+
+```
+yum install httpd -y 
+
+===> copy code to app server
+
+ cp -rf html-sample-app/* /var/www/html/
+
+ ===>
+ systemctl enable --now httpd
+
+
+ ====> checking logs of app
+
+  cd /var/log/httpd/
+[root@ip-172-31-28-99 httpd]# ls
+access_log  error_log
+[root@ip-172-31-28-99 httpd]# cat access_log 
+106.219.70.181 - - [18/Sep/2024:11:53:53 +0000] "GET / HTTP/1.1" 200 8710 "-" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/128.0.0.0 Safari/537.36"
+106.219.70.181 - - [18/Sep/2024:11:53:53 +00
+```
