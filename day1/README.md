@@ -289,3 +289,46 @@ README-splunk.txt  copyright.txt  ftr  lib      openssl           splunkforwarde
 [root@ip-172-31-28-99 splunkforwarder]# 
 
 ```
+
+### starting splunk forwarder 
+
+```
+/opt/splunkforwarder/bin/splunk start --accept-license 
+
+Warning: Attempting to revert the SPLUNK_HOME ownership
+Warning: Executing "chown -R splunkfwd:splunkfwd /opt/splunkforwarder"
+
+This appears to be your first time running this version of Splunk.
+
+Splunk software must create an administrator account during startup. Otherwise, you cannot log in.
+Create credentials for the administrator account.
+Characters do not appear on the screen when you type in credentials.
+
+Please enter an administrator username: adminf
+Password must contain at least:
+   * 8 total printable ASCII character(s).
+Please enter a new password: 
+Please confirm new password: 
+Creating unit file...
+```
+
+### checking status 
+
+```
+
+```
+
+### enable auto start on reboot of machine 
+
+```
+/opt/splunkforwarder/bin/splunk enable boot-start
+```
+
+## note: make sure while doing enable the forwarder service must be in shutdown state
+
+```
+ 16  /opt/splunkforwarder/bin/splunk stop 
+   17  /opt/splunkforwarder/bin/splunk enable boot-start
+   18  /opt/splunkforwarder/bin/splunk start
+```
+
