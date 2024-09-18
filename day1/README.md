@@ -218,3 +218,29 @@ systemctl status docker
      Active: active (running) since Wed 2024-09-18 09:04:33 UTC; 5s ago
 ```
 
+### create splunk enterprise container with license 
+
+```
+docker run -d -p 8000:8000 -e "SPLUNK_START_ARGS=--accept-license" -e "SPLUNK_PASSWORD=SplunkJpmc@12345" --name splunk splunk/splunk:latest
+
+```
+
+### checking contaienr status
+
+```
+docker ps
+CONTAINER ID   IMAGE                  COMMAND                  CREATED          STATUS                             PORTS                                                                                              NAMES
+8f8df7060852   splunk/splunk:latest   "/sbin/entrypoint.sh…"   32 seconds ago   Up 29 seconds (health: starting)   8065/tcp, 8088-8089/tcp, 8191/tcp, 9887/tcp, 0.0.0.0:8000->8000/tcp, :::8000->8000/tcp, 9997/tcp   splunk
+```
+
+### splunk as contaienr 
+
+[click_here](https://hub.docker.com/r/splunk/splunk/)
+
+
+### to remove splunk container 
+
+```
+docker rm splunk -f
+
+```
