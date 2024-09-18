@@ -21,5 +21,11 @@
 
 <img src="sp5.png">
 
+## setup SPlunk 
+
+<img src="setup.png">
+
+
+
 
 
