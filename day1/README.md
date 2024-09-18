@@ -253,3 +253,26 @@ docker rm splunk -f
    50  docker start splunk 
 ```
 
+### final setup 
+
+## Splunk enterprise as linux machine 
+
+```
+rpm -ivh splunk-9.3.1-0b8d769cb912.x86_64.rpm 
+```
+
+### env for auto start 
+
+```
+
+```
+
+### SPlunk indexes and logs storage
+
+<img src="spi.png">
+
+### ways to upload data in splunk 
+
+<img src="spu.png">
+
+
