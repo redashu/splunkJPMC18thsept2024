@@ -281,6 +281,10 @@ rpm -ivh splunk-9.3.1-0b8d769cb912.x86_64.rpm
 ```
 wget -O splunkforwarder-9.3.1-0b8d769cb912.x86_64.rpm "https://download.splunk.com/products/universalforwarder/releases/9.3.1/linux/splunkforwarder-9.3.1-0b8d769cb912.x86_64.rpm"
 
+
+===>> Installing it 
+
+rpm -ivh splunkforwarder-9.3.1-0b8d769cb912.x86_64.rpm
 ===> verify 
 cd /opt/splunkforwarder/
 [root@ip-172-31-28-99 splunkforwarder]# ls
