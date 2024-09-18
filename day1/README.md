@@ -242,5 +242,14 @@ CONTAINER ID   IMAGE                  COMMAND                  CREATED          
 
 ```
 docker rm splunk -f
+```
+
+### docker with splunk 
 
 ```
+47  docker run -d -p 8000:8000 -e "SPLUNK_START_ARGS=--accept-license" -e "SPLUNK_PASSWORD=SplunkJpmc@12345" --name splunk splunk/splunk:latest
+   48  docker ps
+   49  docker stop splunk 
+   50  docker start splunk 
+```
+
