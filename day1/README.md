@@ -91,6 +91,46 @@ rpm -q splunk
 splunk-9.3.1-0b8d769cb912.x86_64
 ```
 
+### configuration of splunk enterprise 
+
+```
+cd /opt/splunk/
 
 
+[root@ip-172-31-26-232 splunk]# ls
+LICENSE.txt        bin            etc  include  license-eula.txt  opt                share                                                swidtag
+README-splunk.txt  copyright.txt  ftr  lib      openssl           quarantined_files  splunk-9.3.1-0b8d769cb912-linux-2.6-x86_64-manifest
+[root@ip-172-31-26-232 splunk]# 
+
+
+```
+
+### version check 
+
+```
+cat  /opt/splunk/etc/splunk.version 
+VERSION=9.3.1
+BUILD=0b8d769cb912
+PRODUCT=splunk
+PLATFORM=Linux-x86_64
+[root@ip-172-31-26-232 splunk]# 
+```
+
+## splunk Installation is same for all 3 os and config dir details 
+
+<img src="setup3.png">
+
+### starting splunk enterprise 
+
+```
+/opt/splunk/bin/splunk  start --accept-license 
+```
+
+### checking splunk status
+
+```
+/opt/splunk/bin/splunk  status
+splunkd is running (PID: 19913).
+splunk helpers are running (PIDs: 19919 20112 20117 20167 20216 20217 20242 20519).
+```
 
