@@ -134,3 +134,62 @@ splunkd is running (PID: 19913).
 splunk helpers are running (PIDs: 19919 20112 20117 20167 20216 20217 20242 20519).
 ```
 
+
+### splunk start and stop 
+
+```
+/opt/splunk/bin/splunk  stop
+Stopping splunkd...
+Shutting down.  Please wait, as this may take a few minutes.
+..                                                         [  OK  ]
+Stopping splunk helpers...
+                                                           [  OK  ]
+Done.
+[root@ip-172-31-26-232 splunk]# /opt/splunk/bin/splunk  start
+
+Splunk> All batbelt. No tights.
+
+Checking prerequisites...
+        Checking http port [8000]: open
+        Checking mgmt port [8089]: open
+```
+
+
+
+### Installation summary 
+```
+  2  wget -O splunk-9.3.1-0b8d769cb912.x86_64.rpm "https://download.splunk.com/products/splunk/releases/9.3.1/linux/splunk-9.3.1-0b8d769cb912.x86_64.rpm"
+    3  ls
+    4  history 
+    5  ls
+    6  exit
+    7  ls
+    8  rpm -ivh splunk-9.3.1-0b8d769cb912.x86_64.rpm 
+    9  rpm -q splunk 
+   10  cd /opt/splunk/
+   11  ls
+   12  cd
+   13  cd /opt/splunk/
+   14  ls
+   15  ls  etc/
+   16  cat  etc/splunk.version 
+   17  cat  /opt/splunk/etc/splunk.version 
+   18  ls
+   19  ls bin/
+   20  cd /opt/splunk/
+   21  ls
+   22  /opt/splunk/bin/splunk  start --accept-license 
+   23  /opt/splunk/bin/splunk  status
+   24  /opt/splunk/bin/splunk  stop
+   25  /opt/splunk/bin/splunk  start
+
+   ```
+
+   ### Uninstalling 
+
+   ```
+/opt/splunk/bin/splunk  stop
+rpm -e splunk
+
+rm -rf /opt/splunk/
+   ```
