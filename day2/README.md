@@ -64,4 +64,46 @@ Monitored Directories:
                 /opt/splunkforwarder/var/log/splunk/audit.log
 ```
 
+# SPL 
 
+## example 1 
+
+```
+index="main" ( host="ip-172-31-16-190.ec2.internal" OR host="ip-172-31-17-131.ec2.internal" )
+```
+
+### Example 2 
+
+```
+index="main" ( host="ip-172-31-16-190.ec2.internal" OR host="ip-172-31-17-131.ec2.internal" ) Chrome*
+```
+
+### Example 3 
+
+```
+( index="ashu_security" OR index="ashu_web" ) host="ashu_www1" process="sshd"
+```
+
+### Example 4 
+
+```
+( index="ashu_security" OR index="ashu_web" ) | fields host , status , bytes
+```
+
+### Example 5 
+
+```
+index="main" | stats count by host
+```
+
+### example 6 -- decending order 
+
+```
+index="main" | stats count by host | sort  -  count
+```
+
+### example 7 ascending order 
+
+```
+index="main" | stats count by host | sort   count
+```
