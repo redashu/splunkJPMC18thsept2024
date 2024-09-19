@@ -131,3 +131,12 @@ index="main" |  top host  | where count >=104
 ```
 index="main" status>=200  status<400  | stats count by host status | sort - count
 ```
+
+## using EVAL 
+
+### demo1 
+
+```
+index="ashu_web" | eval ashu_url=mvindex(split(uri,"?"),0) | table ashu_url , uri
+```
+
