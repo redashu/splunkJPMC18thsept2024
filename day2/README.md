@@ -162,3 +162,15 @@ index="main" host="ip-172-31-28-99.ec2.internal" | eval  suspicious_client=if(ma
 <img src="reg1.png">
 
 
+## demo 
+
+```
+index="main" host="ip-172-31-28-99.ec2.internal" | rex field=_raw "^(?P<ashu_client_ips>[^ ]+)" | table ashu_client_ips
+```
+
+### demo 2 
+
+```
+index="main" host="ip-172-31-28-99.ec2.internal" | rex field=_raw "^(?P<ipaddress>[^ ]+)\s+\-\s+\-\s+(?P<timestamp>\[\d+/\w+/\d+:\d+:\d+:\d+\s+\+\d+\])" | stats count by   ipaddress,timestamp
+```
+
