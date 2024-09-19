@@ -32,3 +32,36 @@ access_log  error_log
 
 ```
 
+### checking my forwarder to pointing to splunk server
+
+```
+/opt/splunkforwarder/bin/splunk list forward-server
+Warning: Attempting to revert the SPLUNK_HOME ownership
+Warning: Executing "chown -R splunkfwd:splunkfwd /opt/splunkforwarder"
+Your session is invalid.  Please login.
+Splunk username: adminf
+Password: 
+Active forwards:
+        54.197.166.158:9997
+Configured but inactive forwards:
+        None
+```
+
+### adding monitor to splunk forwarder so that it can send logs to server 
+
+```
+/opt/splunkforwarder/bin/splunk add monitor  /var/log/httpd/ 
+```
+
+### list monitor
+
+```
+/opt/splunkforwarder/bin/splunk list  monitor  
+Warning: Attempting to revert the SPLUNK_HOME ownership
+Warning: Executing "chown -R splunkfwd:splunkfwd /opt/splunkforwarder"
+Monitored Directories:
+        $SPLUNK_HOME/var/log/splunk
+                /opt/splunkforwarder/var/log/splunk/audit.log
+```
+
+
