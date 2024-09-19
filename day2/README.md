@@ -140,3 +140,16 @@ index="main" status>=200  status<400  | stats count by host status | sort - coun
 index="ashu_web" | eval ashu_url=mvindex(split(uri,"?"),0) | table ashu_url , uri
 ```
 
+### demo 2
+
+```
+index="main" | eval ashu_new_page=mvindex(split(uri,"/"),1) | table ashu_new_page , uri  | where uri>""
+```
+
+### demo 3 
+
+```
+index="main" host="ip-172-31-28-99.ec2.internal" | eval  suspicious_client=if(match(useragent, "(curl|Wget|bot)"),"Suspicious", "Legitimate") | table useragent,suspicious_client
+
+```
+
