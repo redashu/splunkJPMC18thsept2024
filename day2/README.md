@@ -107,3 +107,27 @@ index="main" | stats count by host | sort  -  count
 ```
 index="main" | stats count by host | sort   count
 ```
+
+### printing uniq host count and their values 
+
+```
+index="ashu_security"  process="sshd" | stats values(host) dc(host)
+```
+
+### using top and rare 
+
+```
+(index="ashu_security" OR index="ashu_web" ) | top limit=10 process
+```
+
+### using where 
+
+```
+index="main" |  top host  | where count >=104
+```
+
+### using status
+
+```
+index="main" status>=200  status<400  | stats count by host status | sort - count
+```
