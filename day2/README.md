@@ -173,4 +173,13 @@ index="main" host="ip-172-31-28-99.ec2.internal" | rex field=_raw "^(?P<ashu_cli
 ```
 index="main" host="ip-172-31-28-99.ec2.internal" | rex field=_raw "^(?P<ipaddress>[^ ]+)\s+\-\s+\-\s+(?P<timestamp>\[\d+/\w+/\d+:\d+:\d+:\d+\s+\+\d+\])" | stats count by   ipaddress,timestamp
 ```
+## reports in splunk 
+
+<img src="reports.png">
+
+## answer 
+
+```
+index="main" host="ip-172-31-28-99.ec2.internal" | rex field=_raw "^(?P<ipaddress>[^ ]+)\s+\-\s+\-\s+(?P<timestamp>\[\d+/\w+/\d+:\d+:\d+:\d+\s+\+\d+\])" | stats         earliest(timestamp) as first_timestamp by ipaddress | table ipaddress ,first_timestamp
+```
 
