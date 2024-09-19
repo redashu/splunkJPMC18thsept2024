@@ -153,3 +153,12 @@ index="main" host="ip-172-31-28-99.ec2.internal" | eval  suspicious_client=if(ma
 
 ```
 
+# Regex in SPLunk 
+
+<img src="rex.png">
+
+## Tokens / keywords / macros in REgex 
+
+<img src="reg1.png">
+
+
