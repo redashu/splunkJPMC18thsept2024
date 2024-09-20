@@ -49,5 +49,18 @@ index="main" host="ip-172-31-16-190.ec2.internal" | `web_timestamp_clientIP`
 index="ashu_security" sourcetype=linux_secure root Fail* | rex field=_raw "^\w+\s+\w+\s+\d+\s+\d+\s+\d+:\d+:\d+\s+\w+\d+\s+\w+\[\d+\]:\s+\w+\s+\w+\s+\w+\s+\w+\s+\w+\s+(?P<hacker_ip>[^ ]+)" | table _time , hacker_ip
 ```
 
+## storage in splunk 
+
+<img src="st1.png">
+
+### Index and buckets 
+
+<img src="idb.png">
+
+### adding more monitoring 
+
+<img src="adm.png">
+
+
 
 
