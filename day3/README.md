@@ -12,3 +12,11 @@
 
 <img src="q1.png">
 
+## checking status
+
+```
+/opt/splunkforwarder/bin/splunk status
+
+====>
+/opt/splunkforwarder/bin/splunk list  monitor
+```
